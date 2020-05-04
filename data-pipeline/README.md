@@ -1,40 +1,49 @@
 ## Setup
 
-```
-ubuntu@ls-drone-0:/home/ubuntu/code
- ->> git clone git@github.com:LegalShield/data-engineering.git
-Cloning into 'data-engineering'...
-remote: Enumerating objects: 7, done.
-remote: Counting objects: 100% (7/7), done.
-remote: Compressing objects: 100% (6/6), done.
-remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
-Receiving objects: 100% (7/7), done.
+1. [Configure your GitHub account to use SSH](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+2. Install Docker (if necessary)
+3. Clone the LegalShield/data-engineering GitHub repo:
+    
+    ```
+    ubuntu@ls-drone-0:/home/ubuntu/code
+    ->> git clone git@github.com:LegalShield/data-engineering.git
+    Cloning into 'data-engineering'...
+    remote: Enumerating objects: 7, done.
+    remote: Counting objects: 100% (7/7), done.
+    remote: Compressing objects: 100% (6/6), done.
+    remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+    Receiving objects: 100% (7/7), done.
+    ```
 
+4. Navigate to the repo on your local machine and compose the docker image. This will spin up all the docker containers necessary for to run your local development environment. The file `docker-compose.yml` defines the services, networks, and volumes you are spinnig up:
+    
+    ```
+    ubuntu@ls-drone-0:/home/ubuntu/code
+    ->> cd data-engineering/data-pipeline/
 
-ubuntu@ls-drone-0:/home/ubuntu/code
- ->> cd data-engineering/data-pipeline/
+    ubuntu@ls-drone-0:/home/ubuntu/code/data-engineering/data-pipeline (master)
+    ->> docker-compose up
+    ....
+    lots of output here
+    ```
+   This initiates your local development environment. Once the messages indicate "NiFi has started. The UI is available at the following URLs" you can visit the URL in your browser and begin developing. The default URL is `http://localhost:8080/nifi/`. To shut down the docker containers when you are finished developing, simply enter `ctrl + c` in the command line terminal that is running docker-compose.
 
+5. While all that is downloading go read about [Flow-based programming](https://en.wikipedia.org/wiki/Flow-based_programming)
+and skim these [NiFi resources](https://github.com/jfrazee/awesome-nifi)
 
-ubuntu@ls-drone-0:/home/ubuntu/code/data-engineering/data-pipeline (master)
- ->> docker-compose up
-....
-lots of output here
-```
+6. Once that's up and running we need to get some sample data. In another terminal:
+    
+    ```
+    git clone git@github.com:LegalShield/adonis.git
 
-While all that is downloading go read this: https://en.wikipedia.org/wiki/Flow-based_programming
-and skim this https://github.com/jfrazee/awesome-nifi
+    psql -h 127.0.0.1 -p 15432 -U admin adonis_development < adonis/db/structure.sql 
 
-Once that's up and running we need to get some sample data. In another terminal
-```
-git clone git@github.com:LegalShield/adonis.git
+    pg_dump -Fc --no-acl --no-owner -n public -h adonis-sandbox-us.cluster-cgj12mc2lenh.us-east-2.rds.amazonaws.com -p 15432 -U adonis -T sales_org_geneology_temp -T event_notifications -T publication_events -T publication_routes -T broadcast_events -T ar_internal_metadata -T events -T phone_verification_codes -T publication_routes_webhook_events -T publication_routes_subjects -T schema_migrations -T webhook_events -T notifications adonis_sandbox_us > adonis_sandbox_us.dump
 
-psql -h 127.0.0.1 -p 15432 -U admin adonis_development < adonis/db/structure.sql 
+    pg_restore -c --verbose --no-acl --no-owner -n public -h localhost -p 15432 -U admin -d adonis_development adonis_sandbox_us.dump
+    ```
 
-pg_dump -Fc --no-acl --no-owner -n public -h adonis-sandbox-us.cluster-cgj12mc2lenh.us-east-2.rds.amazonaws.com -p 15432 -U adonis -T sales_org_geneology_temp -T event_notifications -T publication_events -T publication_routes -T broadcast_events -T ar_internal_metadata -T events -T phone_verification_codes -T publication_routes_webhook_events -T publication_routes_subjects -T schema_migrations -T webhook_events -T notifications adonis_sandbox_us > adonis_sandbox_us.dump
-
-pg_restore -c --verbose --no-acl --no-owner -n public -h localhost -p 15432 -U admin -d adonis_development adonis_sandbox_us.dump
-```
-Your local password is password.  Ask a co-worker who has done this what the Sandbox password is
+   Your local password is "password" for the `psql` and `pg_restore` commands.  For the `pg_dump` command, ask a co-worker who has done this for the Sandbox password.
 
 ## Working with your first flow
 
