@@ -4,7 +4,7 @@ The goal of this project is to get a sense for how you would go about building a
 ## Scenario
 You have a team of data analyts interested in helping build the next big movie hit by analyzing IMDB data. They are interested to answer questions like below (you do **NOT** need to answer these questions in your deliverables):
 - Which movie had the highest rating per country and year?
-- What is the average ages of the actors for each movie?
+- What are the average ages of the actors for each movie?
 
 ## Requirements
 1. Design a data model consisting of FACT and DIMENSION tables that can be used to answer the above questions, as well as offer flexibility for further exploration.
