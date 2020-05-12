@@ -145,3 +145,47 @@ Add a descriptive commit message
 And the Green Check means we are now up to date with the Registry
 ![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588031445.jpg)
 
+## On Testing
+
+First I want to say that I'm currently approaching this heavily influenced by
+
+### Design by Contract
+- https://en.wikipedia.org/wiki/Design_by_contract
+- https://www.eiffel.org/
+
+### Generative testing
+
+- https://en.wikipedia.org/wiki/QuickCheck
+- https://medium.com/geckoboard-under-the-hood/how-generative-testing-changed-the-way-we-qa-geckoboard-b4a48a193449
+- https://techbeacon.com/app-dev-testing/how-make-your-code-bulletproof-property-testing
+ 
+Now what I'm about to display is nowhere close to those ideals but, I want you 
+to get where this is intending to go
+
+An overview
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886604.jpg)
+This is the real generator it's listening for events from github, storing them in S3 and calling the logic
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886161.jpg)
+This is the Test Generator I grabbed these examples directly from S3 and can now
+inject them into the flow at will
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886630.jpg)
+It's important to set the frequency at a managable level otherwise GenerateFlowFile
+will fill your pipeline as fast as it can overwhelming your other processors
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886643.jpg)
+I add an indicator property 'shoulda' with either a true or false value.
+This indicates that this is a test record *and* where it should end up.
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886719.jpg)
+This is our processor logic.  We're looking for only commits to develop that
+mention structure.sql.  I hesitate to call this a `precondition` group but that's
+where the inspiration comes from
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886686.jpg)
+Failures are bucketed into
+- expected to fail
+- exected not to fail
+- unexpected (not test data)
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886749.jpg)
+Successes are similarly bucketed but non-test data is setup to route to an output
+![](https://general-adonis-development.s3.us-east-2.amazonaws.com/screenshots/screenshot-1588886762.jpg)
+
+Notice that in all these cases my ProcessorGroups are using the same success/failure
+conventions you see in most native Processors.
