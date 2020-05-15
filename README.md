@@ -18,6 +18,8 @@ You have a team of data analyts interested in helping build the next big movie h
 ## Resources and Notes
 - Download the IMDB data as a zip file from this repo 
 - This [Kaggle data set](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) is the original source
-- Feel free to email with questions, however we do not want you to wait on replies in order to move forward. For most things, simply document your assumptions and move on.
-- Use git (fork to own repo; store your files and solution there)
-- Please don't spend more than ~2-4 hours on this. We want to see good work, but not steal your free time. 
+- Feel free to email questions to recruting contact, however we do not want you to wait on replies in order to move forward. For most things, simply document your assumptions and move on.
+- Use Git/GitHub if possible:
+   - **Clone** the repo to your own
+   - Store your files and solution in your cloned repo
+   - Provide a link to us when it's complete (no need to submit a Pull Request as we'd like to protect your confidentiality during the hiring process).
