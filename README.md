@@ -40,5 +40,4 @@ You have a team of data analyts interested in helping build the next big movie h
    ![ER Diagram](https://github.com/SVanComstock/IMDb/blob/master/DBMS_ER_diagram.png)
 
 ## JDBC Settings   
-    ![JDBC Settings](https://github.com/SVanComstock/IMDb/blob/master/jdbc_connection_settings.png)
-  
+   ![JDBC Settings](https://github.com/SVanComstock/IMDb/blob/master/jdbc_connection_settings.png)
