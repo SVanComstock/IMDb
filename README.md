@@ -37,4 +37,6 @@ You have a team of data analyts interested in helping build the next big movie h
 3. Imported the transformed data into the IMDb production database using stored procedures
    
    ![ER Diagram](https://github.com/SVanComstock/IMDb/issues/1#issue-620179162)
+   
+   ![ER Diagram](https://github.com/SVanComstock/IMDb/blob/master/DBMS_ER_diagram.png)
   
