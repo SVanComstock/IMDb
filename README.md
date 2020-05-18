@@ -23,3 +23,16 @@ You have a team of data analyts interested in helping build the next big movie h
    - **Clone** the repo to your own
    - Store your files and solution in your cloned repo
    - Provide a link to us when it's complete (no need to submit a Pull Request as we'd like to protect your confidentiality during the hiring process).
+
+# Approach
+## Tools
+1. MySQL Server: Created local instance
+2. MySQL Databases: Built databases, schemas, and tables for IMDb data
+3. Table Data Wizard (for Import/Export of .csv data files)
+4. Atom Editor
+   
+## Process
+1. Imported raw data from .csv files, transformed data in Table Data Wizard
+2. Formatted raw data using stored procedures 
+3. Imported the transformed data into the IMDb production database using stored procedures
+   
