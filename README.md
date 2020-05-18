@@ -24,7 +24,7 @@ You have a team of data analyts interested in helping build the next big movie h
    - Store your files and solution in your cloned repo
    - Provide a link to us when it's complete (no need to submit a Pull Request as we'd like to protect your confidentiality during the hiring process).
 
-# Approach
+# Sasha's Approach
 ## Tools
 1. MySQL Server: Created local instance
 2. MySQL Databases: Built databases, schemas, and tables for IMDb data
