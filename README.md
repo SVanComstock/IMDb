@@ -39,5 +39,16 @@ You have a team of data analyts interested in helping build the next big movie h
 ## ER Diagram   
    ![ER Diagram](https://github.com/SVanComstock/IMDb/blob/master/DBMS_ER_diagram.png)
 
+## MySQL Server Connections   
+   ![MySQL Server Connections](https://github.com/SVanComstock/IMDb/blob/master/MySQL_Server_Connections.png)
+
 ## JDBC Settings   
    ![JDBC Settings](https://github.com/SVanComstock/IMDb/blob/master/jdbc_connection_settings.png)
+
+## Server Status Dashboard   
+   ![Server Status Dashboard](https://github.com/SVanComstock/IMDb/blob/master/Server_Status_Dashboard.png)
+   
+## Import Settings Example  
+   ![Import Settings Example](https://github.com/SVanComstock/IMDb/blob/master/Import_Settings.png)
+     
+   
