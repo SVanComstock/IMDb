@@ -45,10 +45,13 @@ You have a team of data analyts interested in helping build the next big movie h
 ## JDBC Settings   
    ![JDBC Settings](https://github.com/SVanComstock/IMDb/blob/master/jdbc_connection_settings.png)
 
-## Server Status Dashboard   
-   ![Server Status Dashboard](https://github.com/SVanComstock/IMDb/blob/master/Server_Status_Dashboard.png)
-   
 ## Import Settings Example  
    ![Import Settings Example](https://github.com/SVanComstock/IMDb/blob/master/Import_Settings.png)
+   
+## dim_Movies_Details Sample  
+   ![dim_Movies_Details Sample](https://github.com/SVanComstock/IMDb/blob/master/dim_Movie_Details_sample.png)   
+   
+## Server Status Dashboard   
+   ![Server Status Dashboard](https://github.com/SVanComstock/IMDb/blob/master/Server_Status_Dashboard.png)  
      
    
