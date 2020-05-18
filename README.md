@@ -35,7 +35,13 @@ You have a team of data analyts interested in helping build the next big movie h
 1. Imported raw data from .csv files, transformed data in Table Data Wizard
 2. Formatted raw data using stored procedures 
 3. Imported the transformed data into the IMDb production database using stored procedures
-   
+
+## Files
+1. IMDb_raw database structure
+2. IMDb production database structure
+3. Table structures
+4. Stored procedures
+
 ## ER Diagram   
    ![ER Diagram](https://github.com/SVanComstock/IMDb/blob/master/DBMS_ER_diagram.png)
 
