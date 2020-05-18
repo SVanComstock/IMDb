@@ -36,7 +36,7 @@ You have a team of data analyts interested in helping build the next big movie h
 2. Formatted raw data using stored procedures 
 3. Imported the transformed data into the IMDb production database using stored procedures
 
-## Files
+## Files (Beginning stages of building out data warehouse) 
 1. IMDb_raw database structure
 2. IMDb production database structure
 3. Table structures
